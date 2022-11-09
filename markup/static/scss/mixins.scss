@@ -1,0 +1,83 @@
+// Mixins.
+
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+@mixin cf {
+
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+@mixin blocks-justify {
+    text-align: justify;
+    text-justify: newspaper;
+}
+
+@mixin font-face($name, $file, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url("#{$file}.eot");
+        src: url("#{$file}.eot?#iefix") format("embedded-opentype"),
+        url("#{$file}.woff") format("woff"),
+        url("#{$file}.ttf") format("truetype"),
+        url("#{$file}.svg?#webfont") format("svg");
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+@mixin hover-off {
+    @media (min-width: (1024px)) {
+        @content;
+    }
+}
+
+@mixin big-desktop {
+    @media (max-width: (1350px)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: (1280px)) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: (1024px)) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: (768px)) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: (499px)) {
+        @content;
+    }
+}
+
+// You can add your own mixins here:

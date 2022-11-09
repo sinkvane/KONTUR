@@ -1,0 +1,38 @@
+.footer {
+    flex-shrink: 0;
+    background-color: $white;
+    padding: 40px 0px;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include phone {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.footer__left {
+    font-size: 14px;
+    color: $text;
+}
+
+.footer__link {
+    color: $accent;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 8px;
+
+    &:focus {
+        border: 2px solid rgba(226, 116, 16, 0.3);
+        border-radius: 2px;
+    }
+
+    @include phone {
+        position: relative;
+        left: -8px;
+    }
+}

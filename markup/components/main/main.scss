@@ -1,0 +1,101 @@
+.main {
+    padding: 170px 0px 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../static/img/content/bg-main.png');
+    background-position: center center;
+
+    @include tablet {
+        background-position-x: 60%;
+    }
+}
+
+.main__top {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-bottom: 120px;
+
+    @include desktop {
+        width: 100%;
+    }
+
+    @include tablet {
+        margin-bottom: 100px;
+    }
+
+    @include tablet {
+        margin-bottom: 70px;
+    }
+}
+
+.top__text {
+    font-size: 18px;
+    color: $white;
+    line-height: 145%;
+    margin: 0;
+}
+
+
+.main__bottom {
+    display: flex;
+
+    @include tablet {
+        flex-direction: column;
+    }
+}
+
+.bottom__card {
+    width: 33.3333%;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border-radius: 4px;
+    padding: 16px 24px;
+    margin-right: 60px;
+    transition: background-color .2s linear, transform .2s linear;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        background-color: $hover;
+        cursor: pointer;
+        transform: translateY(-15px);
+
+        &>.bottom__svg {
+            fill: $white;
+        }
+
+        &>.bottom__text {
+            color: $white;
+        }
+
+        @include tablet {
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    @include tablet {
+        width: 100%;
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.bottom__text {
+    color: $text;
+    transition: color .2s linear;
+}
+
+.bottom__svg {
+    margin-right: 16px;
+    fill: $accent;
+    transition: fill .2s linear;
+}

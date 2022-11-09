@@ -1,0 +1,360 @@
+.quest {
+    background: $bg-linear;
+    margin-top: 140px;
+    margin-bottom: 140px;
+    width: 100%;
+
+    @include laptop {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    @include tablet {
+        margin-bottom: 80px;
+        margin-top: 80px;
+    }
+
+    @include phone {
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+}
+
+.quest-inner {
+    display: grid;
+    padding: 120px 0;
+    grid-template-columns: repeat(2, 2fr);
+    grid-column-gap: 55px;
+
+    @include laptop {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.quest__left {
+    display: grid;
+}
+
+.quest__right {
+    position: relative;
+    padding-left: 55px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 3px;
+        background-color: $white;
+        left: 0;
+        opacity: 0.1;
+        border-radius: 3px;
+
+        @include laptop {
+            display: none;
+        }
+    }
+
+    @include desktop {
+        padding-left: 70px;
+    }
+
+    @include laptop {
+        padding-left: 0;
+        margin-top: 48px;
+    }
+}
+
+.quest__form {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 55px;
+
+    @include laptop {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include tablet {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+.form__left {
+    display: grid;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 2;
+    row-gap: 24px;
+
+    @include laptop {
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 4;
+    }
+}
+
+.form__sumbit {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    height: auto;
+
+    grid-row-start: 4;
+    grid-column-start: 1;
+
+    grid-row-end: 5;
+    grid-column-end: 3;
+
+    @include laptop {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-row-end: 4;
+        grid-column-end: 4;
+    }
+
+    @include tablet {
+        grid-row-start: 5;
+        grid-column-start: 1;
+
+        grid-row-end: 6;
+        grid-column-end: 4;
+    }
+}
+
+.form__area {
+    grid-row-start: 1;
+    grid-column-start: 2;
+
+    grid-row-end: 4;
+    grid-column-end: 3;
+
+    @include laptop {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-row-end: 4;
+        grid-column-end: 3;
+    }
+
+    @include tablet {
+        grid-row-start: 3;
+        grid-column-start: 1;
+
+        grid-row-end: 5;
+        grid-column-end: 4;
+    }
+}
+
+.form__btn {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    color: $white;
+
+    border-radius: 4px;
+    border: none;
+    background-color: $accent;
+    padding: 14px 0;
+    transition: background-color .2s linear;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $hover;
+    }
+}
+
+.form__block {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.form__input {
+    flex: 2;
+    padding: 11px 16px;
+    border-radius: 4px;
+    border: none;
+
+    &::placeholder {
+        font-size: 18px;
+        line-height: 120%;
+        color: #969696;
+        font-family: inherit;
+    }
+
+    @include laptop {
+        height: 50px;
+    }
+}
+
+.reset__form {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 17px;
+    right: 12px;
+    cursor: pointer;
+    transition: opacity .2s linear;
+    opacity: 1;
+    fill: #969696;
+
+    &:hover {
+        fill: $hover;
+    }
+
+    &--hidden {
+        opacity: 0;
+    }
+}
+
+.area__text {
+    margin: 0;
+    width: 100%;
+    padding: 16px 12px;
+    appearance: none;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+
+    &::placeholder {
+
+        font-size: 18px;
+        line-height: 120%;
+        color: #969696;
+        font-family: inherit;
+    }
+}
+
+
+.right__phones {
+    display: grid;
+    margin-top: 55px;
+
+    @include laptop {
+        grid-template-columns: repeat(3, 33%);
+    }
+
+    @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 16px;
+    }
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include laptop {
+        margin-bottom: 0;
+    }
+}
+
+.phone__svg {
+    margin-right: 8px;
+}
+
+.phone__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.phone__subtitle {
+    font-size: 14px;
+    line-height: 120%;
+    color: $white;
+}
+
+.phone__numbers {
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: 600;
+    color: $white;
+    text-decoration: none;
+}
+
+.checkbox {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.checkbox__input {
+    appearance: none;
+    position: absolute;
+}
+
+.checkbox__label {
+    padding-left: 25px;
+    font-size: 1rem;
+    color: #444;
+    cursor: pointer;
+}
+
+.checkbox__label {
+
+    &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: background .1s linear, border .1s linear;
+    }
+}
+
+.checkbox__link {
+    color: $accent;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 120%;
+}
+
+.checkbox__text {
+    font-size: 14px;
+    color: $white;
+    line-height: 120%;
+}
+
+.checkbox__svg {
+    display: block;
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+    transition: opacity .1s linear;
+}
+
+.checkbox__input:checked+.checkbox__label:before {
+    background-color: $accent;
+}
+
+.checkbox__input {
+    &:checked {
+        .checkbox__svg {
+            opacity: 1;
+        }
+    }
+}
